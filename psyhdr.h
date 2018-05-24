@@ -939,6 +939,32 @@ class psyhistogram : public psyfullbuff {
   void chknfillbuff();
 };
 
+
+class reverseplanes : public psypgbuff {
+ protected:
+  void fillpage(char *buff, int z, int i);
+ public:
+  reverseplanes() {};
+  reverseplanes(psyimg *psyimgptr, int maxnumpages=1);
+};
+
+class reversecols : public psypgbuff {
+ protected:
+  void fillpage(char *buff, int z, int i);
+ public:
+  reversecols() {};
+  reversecols(psyimg *psyimgptr, int maxnumpages=1);
+};
+
+class switchrowsncols : public psypgbuff {
+ protected:
+  void fillpage(char *buff, int z, int i);
+ public:
+  switchrowsncols() {};
+  switchrowsncols(psyimg *psyimgptr, int maxnumpages=1);
+};
+
+
 // psyshapes.cc
 
 class psyimgblk : public psyimglnkpxl {
